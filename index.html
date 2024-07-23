@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="javascript/javascript.js"></script>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <!--Image-->
+            <img src="assets/profile.png">
+            <!--Heading-->
+            <h1>Ask me a question</h1>
+            <!--input-->
+            <input type="text" value="Type something Here..." id="GetInput"><br>
+            <!--button-->
+            <button onclick="accept()" id="Acpbutton">Accept</button>
+            <button onclick="Decline()" id="Decbutton">Decline</button>
+        </div>
+        <!--script starts-->
+        <script>
+            const Quest = [
+                "What is your Name?",
+                "Which college you are?",
+                "What is your Aim?",
+                "What is your hobby?",
+                "What is you Department?",
+                "Who is your favorite music director?",
+                "What is your favourite color?",
+                "Explain about your Technical Skill?",
+                "Where are you from?"
+            ];
+
+            document.getElementById('Acpbutton').addEventListener('click', function () {
+                const question = document.getElementById('GetInput').value;
+                if (question) {
+                    if (Quest.includes(question)) {
+                        alert('Success: Your question is accepted.');
+                    } else {
+                        alert('Error: Your question is wrong.');
+                    }
+                } else {
+                    alert('Please type a question.');
+                }
+            });
+
+            document.getElementById('Decbutton').addEventListener('click', function () {
+                document.getElementById('GetInput').value = '';
+                alert('Input cleared.');
+            });
+        </script>
+        <!--script Ends-->
+</body>
+
+</html>
